@@ -16,15 +16,15 @@ public class StudentDashboardPageTestCases extends StudentDashBoardPage{
     @Test(priority = 17)
     public static void EnrollCourse() {
        clickEnrollNow();
-     /* enterfirstName("Earth");
+       enterfirstName("Elizabeth");
         enterLastName("Queen");
-        enterAddressLine1("1919");
-        enterAddressLine2("newGateway Rd");
-        enterCity("Newyork");
+        enterAddressLine1("134 SaddleCreek");
+        enterAddressLine2("Gateway Rd");
+        enterCity("Austin");
         selectCountry("United States of America");
-        enterState("NY");
-        enterAddressZipcode("10001");
-        clickSaveAddressButton();*/
+        enterState("Texas");
+        enterAddressZipcode("76423");
+        clickSaveAddressButton();
         verifyPaymentMethod();
         clickPayNowButton();
         verifyCardTabSelection();
@@ -34,6 +34,5 @@ public class StudentDashboardPageTestCases extends StudentDashBoardPage{
         enterZipcode("76423");
         clickContinueButton();
     }
-
 
 }

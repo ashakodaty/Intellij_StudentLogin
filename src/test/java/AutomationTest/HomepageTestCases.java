@@ -26,9 +26,9 @@ public class HomepageTestCases extends Homepage {
         System.out.println("***********HomePage Login Test Cases Ended****************");
     }
 
-    @AfterSuite
+   /* @AfterSuite
     public static void closeApplication()
     {
         closeApp();
-    }
+    }*/
 }

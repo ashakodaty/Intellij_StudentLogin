@@ -17,8 +17,8 @@ public class StudentLoginPageTestCases extends StudentLoginPage {
     @Test(priority = 14)
     public static void loginAsStudent() {
       //  clickLoginButton();
-        enterStudentEmailAddress("student31@mailinator.com");
-        enterStudentPassword("start123");
+        enterStudentEmailAddress("abc123@gmail.com");
+        enterStudentPassword("Mylife@123");
         clickStudentLogin();
     }
 

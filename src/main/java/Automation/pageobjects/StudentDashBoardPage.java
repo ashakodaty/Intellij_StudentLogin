@@ -24,7 +24,7 @@ public class StudentDashBoardPage extends Base {
     public static By countryListDropdown = By.xpath(" //div/ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li");
     public static By zipInputBox = By.xpath("//input[@id='zip']");
     public static By saveButton = By.xpath("//button/span[contains(text(),'SAVE')]");
-    public static By StripeText = By.xpath("//div/img[@alt='stripepay']");
+    public static By StripeText = By.xpath(""//div/img[@alt='stripepay']);
     public static By payNowButton = By.xpath(" //button/span[text()='Pay Now']");
     public static By frame = By.xpath("//iframe[@title='Secure payment input frame']");
 

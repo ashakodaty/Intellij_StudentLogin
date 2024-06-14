@@ -50,7 +50,7 @@ public class Homepage extends Base {
     public static By blogsLink = By.xpath("//div/a[@href='https://infyni.com/blog/']");
     public static By blogslogoimage = By.xpath("//div[@class='logo-menu-wrap']");
     //Home page footer - FreeWebinars link objects
-    public static By freeWebinarsLink = By.xpath("//div/a[@href='/freewebinars']");
+    public static By freeWebinarsLink = By.xpath("//div/a[@href='/free-webinars']");
     public static By freewebinartext = By.xpath("//div[@class='FreeWebinars_freewebinars__ZBX_Y']/div/p[contains(text(),'Free Webinars')]");
 
 

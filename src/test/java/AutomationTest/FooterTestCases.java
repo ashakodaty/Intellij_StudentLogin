@@ -191,10 +191,10 @@ public class FooterTestCases extends Homepage {
         backToInfyniHomePage();
         System.out.println("***********HomePage Footer Test Cases Ended****************");
     }
-    @AfterSuite
+ /*   @AfterSuite
     public static void closeApp()
     {
         driver.close();
-    }
+    }*/
 
 }

@@ -14,6 +14,7 @@ public class StudentDashBoardPage extends Base {
     public static By listCount = By.xpath("//ul[@class='absolute top-[100%] max-h-[300px] overflow-auto w-full bg-white shadow-md rounded-[10px]']/li");
     public static By CourseLink = By.xpath("//p[@class='capitalize text-[16px] line-clamp-2 !font-primary-font-bold']");
     public static By enrollNowButton = By.xpath("//span[contains(text(),'Enroll Now')]");
+    public static By billinglink = By.xpath("//img[@src='/_next/static/media/edit.6e737c9b.svg']");
     public static By firstNameInputBox = By.xpath("//input[@id='first_name']");
     public static By lastNameInputBox = By.xpath("//input[@id='last_name']");
     public static By address1InputBox = By.xpath("//input[@id='address1']");
@@ -24,8 +25,8 @@ public class StudentDashBoardPage extends Base {
     public static By countryListDropdown = By.xpath(" //div/ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li");
     public static By zipInputBox = By.xpath("//input[@id='zip']");
     public static By saveButton = By.xpath("//button/span[contains(text(),'SAVE')]");
-    public static By StripeText = By.xpath(""//div/img[@alt='stripepay']);
-    public static By payNowButton = By.xpath(" //button/span[text()='Pay Now']");
+    public static By StripeText = By.xpath("//div/img[@alt='stripepay']");
+    public static By payNowButton = By.xpath("//button/span[text()='Pay Now']");
     public static By frame = By.xpath("//iframe[@title='Secure payment input frame']");
 
     public static By cardTabButton = By.xpath("//span[@class='p-TabLabel TabLabel TabLabel--selected' and text()='Card']");
@@ -35,6 +36,20 @@ public class StudentDashBoardPage extends Base {
     public static By countryDropdown = By.xpath("//div[@class='p-Input']/input[@id='Field-numberInput']");
     public static By zipcodeTextbox = By.xpath("//input[@id='Field-postalCodeInput']");
     public static By continueButton = By.xpath("//span[text()='Continue']");
+
+
+    ///Cart Locators
+    public static By addToCartButton = By.xpath("//span[text()='Add to Cart']");
+    public static By Cartlink = By.xpath("//img[@src='/_next/static/media/cart_unfilled.e2a2d5d4.svg']");
+    public static By VerifyCheckout = By.xpath("//span[text()='Check Out']");
+    public static  By cartCourseCheckBox =By.xpath("//label[@class=' border border-transparent !p-[5px_0_0_0px]  rounded-[2px] cursor-pointer relative text-[#FF6600]']");
+    public static By cartCourseRemove= By.xpath("//button[@class='rounded-full bg-[#F0F2F5]']");
+    public static By addMoreCoursesButton = By.xpath("//button/span[text()='Add More Courses']");
+    public static By closeButton = By.xpath("//button/span[text()='Close']");
+    public static By nextButton= By.xpath("//button/span[text()='Next']");
+    public static By verifyCartEmpty=By.xpath("//h2[text()='Your cart is empty']");
+    public static By exploreCourseButton =By.xpath("//span[text()='Explore Courses']");
+
 
     //Methods
     public static void clickHomeLink() {
@@ -92,7 +107,7 @@ public class StudentDashBoardPage extends Base {
 
             }
             for (int j = 0; j < searchList.size(); j++) {
-                if (searchList.get(j).getText().equals("interior Art design")) {
+                if (searchList.get(j).getText().equals("Java Fundamentals")) {
                     searchList.get(j).click();
                     break;
                 }
@@ -120,6 +135,17 @@ public class StudentDashBoardPage extends Base {
         try {
             driver.findElement(enrollNowButton).click();
             System.out.println("Clicked on enroll now button in course page");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+    public static void clickBilling() {
+        try {
+            driver.findElement(billinglink).click();
+            System.out.println("Clicked on enroll now button in course page");
+            Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -350,4 +376,144 @@ public class StudentDashBoardPage extends Base {
             e.printStackTrace();
         }
     }
+
+    // Shopping cart
+    public static void addToCartCourse(){
+        try {
+            driver.findElement(addToCartButton).click();
+            System.out.println("Course added to cart ");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    public static void checkoutCartHeader(){
+        try {
+            driver.findElement(Cartlink).click();
+            System.out.println("clicked on the cart on the top rightside of the header  ");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+    public static boolean verifyCheckoutCart() {
+        boolean result = false;
+        try {
+            driver.findElement(VerifyCheckout).isDisplayed();
+            System.out.println("Checkout is verified ");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return result;
+    }
+public static void cartCheckBoxClick(){
+    try {
+        driver.findElement(cartCourseCheckBox).isDisplayed();
+        System.out.println("Cart course checkbox displayed ");
+        Thread.sleep(3000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement checkboxClick = driver.findElement(cartCourseCheckBox);
+        js.executeScript("arguments[0].click();", checkboxClick);
+       // driver.findElement(cartCourseCheckBox).click();
+        System.out.println("Checkbox selected");
+    } catch (Exception e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}
+public static void addMoreCoursesClick(){
+    try {
+        driver.findElement(addMoreCoursesButton).click();
+        System.out.println("Add More courses button is clicked");
+    } catch (Exception e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+
+}
+    public static void closeClicked(){
+        try {
+            driver.findElement(closeButton).click();
+            System.out.println("Close  button is clicked");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void nextClicked(){
+        try {
+            driver.findElement(nextButton).click();
+            System.out.println("Next  button is clicked");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public static void removeCoursesClick(){
+        try {
+            driver.findElement(cartCourseRemove).click();
+            System.out.println("Course is removed");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+    public static boolean verifyEmptyCart(){
+        boolean result = false;
+        try {
+            driver.findElement(verifyCartEmpty).isDisplayed();
+            System.out.println("Checkout is verified ");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return result;
+
+    }
+
+
+
+    public static void exploreCourses(){
+        try {
+            driver.findElement(exploreCourseButton).click();
+            System.out.println("explore button is clicked");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

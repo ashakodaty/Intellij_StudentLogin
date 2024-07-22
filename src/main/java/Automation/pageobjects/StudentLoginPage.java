@@ -8,11 +8,12 @@ public class StudentLoginPage extends Base {
     public static By stu_EmailInputBox=By.xpath("//input[@type='email']");
     public static By stu_PasswordInputBox=By.xpath("//input[@type='password']");
     public static By stu_LogInButton=By.xpath("//button[@type='submit']");
-    public static By loginButton = By.xpath("//span[text()='Log In']");
+
+
     public static By dashboardText=By.xpath("//span[@class='font-primary-font-bold tab-panel_title__oPS_k' and text()='Dashboard']");
     public static void clickLoginButton() {
         try {
-            driver.findElement(loginButton).click();
+            driver.findElement(stu_LogInButton).click();
             System.out.println("Clicked on Login Button");
         } catch (Exception e) {
             // TODO Auto-generated catch block

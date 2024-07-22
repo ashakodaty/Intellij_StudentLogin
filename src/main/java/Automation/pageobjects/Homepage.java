@@ -25,7 +25,7 @@ public class Homepage extends Base {
     public static By signUpText = By.xpath("//h4[contains(text(),'Sign Up')]");
     public static By becomeInstructorLink = By.xpath("//a[@href='/instructor-homepage']");
     public static By becomeInstructorText = By.xpath("//div[@class='instructorhomepage_title__JrzNA' and text()='Become an Instructor']");
-    public static By infyniForBusinessLink = By.xpath("//a[@href='/business' and text()='Infyni for Business']");
+    public static By infyniForBusinessLink = By.xpath("//a[text()='Infyni for Business']");
     public static By infyniForBusinessText = By.xpath("//h2[contains(text(),'Infyni for Business')]");
     public static By privacyPolicyText = By.xpath("//p[contains(text(),'Privacy Policy')]");
     public static By infynilogo = By.xpath("//div[@class='header_header__aawC5']/div/a[@href='/']"); // action click

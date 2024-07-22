@@ -7,22 +7,22 @@ import org.testng.annotations.Test;
 
 
 public class StudentLoginPageTestCases extends StudentLoginPage {
- /*   @BeforeSuite
+  /*  @BeforeSuite
     public static void lauchApplication()
  {
         launchBrowser("Chrome");
         launchApp("https://devnj.infyni.com/");
         implicitWait(30);
     }*/
-    @Test(priority = 14)
+    @Test(priority = 2)
     public static void loginAsStudent() {
       //  clickLoginButton();
-        enterStudentEmailAddress("abc123@gmail.com");
-        enterStudentPassword("Mylife@123");
+        enterStudentEmailAddress("student31@mailinator.com");
+        enterStudentPassword("start123");
         clickStudentLogin();
     }
 
-    @Test(priority=15)
+    @Test(priority=3)
     public static void verifyDashboardTextPresence() {
         boolean actualresult = dashboardTextPresence();
         boolean expectedresult = true;
